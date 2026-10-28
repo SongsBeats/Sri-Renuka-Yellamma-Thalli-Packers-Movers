@@ -142,24 +142,6 @@ export function Footer() {
               decoding="async"
             />
           </a>
-          <a
-            href="https://vgrow.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
-            aria-label="Managed by vgrow.ai"
-          >
-            <span>Managed by</span>
-            <img
-              src="/images/vgrow-logo.png"
-              alt="vgrow.ai"
-              width={84}
-              height={18}
-              className="h-[18px] w-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
         </div>
       </div>
     </footer>
