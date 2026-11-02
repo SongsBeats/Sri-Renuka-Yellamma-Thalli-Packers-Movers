@@ -1,12 +1,12 @@
-import { MapPin } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import { business } from '../data/business';
 import { Button } from './Button';
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-ivory">
-      <div className="container-site grid items-center gap-10 py-12 lg:grid-cols-12 lg:gap-14 lg:py-16 xl:py-20">
-        <div className="lg:col-span-6 xl:col-span-5">
+      <div className="container-site grid items-center gap-12 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16 xl:gap-20 xl:py-20">
+        <div className="min-w-0 lg:col-span-6 xl:col-span-6">
           <p className="mb-5 text-[0.7rem] font-medium tracking-[0.22em] text-terracotta uppercase">
             Packing · Moving · Relocation
           </p>
@@ -21,11 +21,12 @@ export function HeroSection() {
             convenient.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button to="/contact#quote" size="lg">
               Request a Quote
             </Button>
-            <Button href={business.phoneTel} variant="outline" size="lg">
+            <Button href={business.phoneTel} variant="callGradient" size="lg">
+              <Phone size={16} aria-hidden />
               Call {business.phoneDisplay}
             </Button>
           </div>
@@ -36,7 +37,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <div className="lg:col-span-6 xl:col-span-7">
+        <div className="min-w-0 lg:col-span-6 xl:col-span-6">
           <div className="image-frame aspect-[4/3] overflow-hidden rounded-sm bg-sage/40 shadow-[0_20px_50px_-28px_rgba(25,61,50,0.45)]">
             <img
               src="/images/hero-moving.jpg"
