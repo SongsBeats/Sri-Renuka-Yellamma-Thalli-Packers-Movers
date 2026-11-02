@@ -1,5 +1,6 @@
 import { BrandStorySection } from '../components/BrandStorySection';
 import { ContactSection } from '../components/ContactSection';
+import { GallerySection } from '../components/GallerySection';
 import { HeroSection } from '../components/HeroSection';
 import { ProcessSection } from '../components/ProcessSection';
 import { QuoteForm } from '../components/QuoteForm';
@@ -22,6 +23,7 @@ export function HomePage() {
       <TrustStrip />
       <ServicesSection />
       <BrandStorySection />
+      <GallerySection />
       <ProcessSection />
       <WhyChooseUsSection />
       <ServiceAreasSection />

@@ -143,3 +143,33 @@
     text-wrap: balance;
   }
 }
+
+/* Gallery marquee (infinite, pauses on hover/focus, static + scrollable for reduced motion) */
+.marquee {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding-right: 1rem;
+  animation: marquee-scroll 50s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}

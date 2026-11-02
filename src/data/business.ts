@@ -32,6 +32,7 @@ export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'About', path: '/about' },
+  { label: 'Gallery', path: '/gallery' },
   { label: 'Service Areas', path: '/service-areas' },
   { label: 'Contact', path: '/contact' },
 ] as const;
@@ -221,3 +222,56 @@ export const siteUrl = '';
 /** Pre-filled WhatsApp opening message used by the floating button and Call/WhatsApp buttons. */
 export const whatsappDefaultMessage =
   'Hello, I would like to enquire about packing and moving services with Sri Renuka Yellamma Thalli Packers & Movers.';
+
+export type GalleryImage = {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+};
+
+/** Real business photos (the same ones used on the Google Business Profile). */
+export const galleryImages: GalleryImage[] = [
+  {
+    id: 'truck-front',
+    src: '/images/gallery/sryt-truck-front.webp',
+    width: 640,
+    height: 640,
+    alt: 'Front of a Sri Renuka Yellamma Thalli Packers & Movers truck in Karmanghat, Hyderabad',
+    caption: 'Our branded moving truck',
+  },
+  {
+    id: 'fleet',
+    src: '/images/gallery/sryt-fleet.webp',
+    width: 1400,
+    height: 630,
+    alt: 'Fleet of Sri Renuka Yellamma Thalli Packers & Movers trucks decorated with garlands in Karmanghat, Hyderabad',
+    caption: 'Our fleet, ready for your move',
+  },
+  {
+    id: 'packing-materials',
+    src: '/images/gallery/sryt-packing-materials.webp',
+    width: 1280,
+    height: 577,
+    alt: 'Moving blanket and bubble wrap packing materials used by Sri Renuka Yellamma Thalli Packers & Movers, Karmanghat, Hyderabad',
+    caption: 'Packing materials: blankets, bubble wrap and stretch film',
+  },
+  {
+    id: 'loaded-truck',
+    src: '/images/gallery/sryt-loaded-truck.webp',
+    width: 1280,
+    height: 576,
+    alt: 'Sri Renuka Yellamma Thalli Packers & Movers truck loaded with household goods in Karmanghat, Hyderabad',
+    caption: 'A truck loaded with household goods',
+  },
+  {
+    id: 'office',
+    src: '/images/gallery/sryt-office-karmanghat.webp',
+    width: 1280,
+    height: 576,
+    alt: 'Office entrance of Sri Renuka Yellamma Thalli Packers & Movers at Tapovan Colony, Karmanghat, Hyderabad',
+    caption: 'Our office at Tapovan Colony, Karmanghat',
+  },
+];
