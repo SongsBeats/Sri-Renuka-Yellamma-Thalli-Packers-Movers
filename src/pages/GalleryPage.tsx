@@ -3,6 +3,7 @@ import { Button } from '../components/Button';
 import { GalleryGrid } from '../components/GalleryGrid';
 import { SectionLabel } from '../components/SectionLabel';
 import { Seo } from '../components/Seo';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { business } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 
@@ -40,8 +41,9 @@ export function GalleryPage() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              variant="accent"
+              variant="whatsapp"
             >
+              <WhatsAppIcon size={18} />
               WhatsApp Us
             </Button>
           </div>

@@ -54,7 +54,7 @@ export function PrivacyPage() {
               information in an online database. When you submit the form, the
               details you enter are used to create a pre-filled WhatsApp message
               that opens in your WhatsApp application so you can send it to our
-              business number ({business.phoneDisplay}).
+              business number (<span className="whitespace-nowrap">{business.phoneDisplay}</span>).
             </p>
             <p className="mt-3 text-base leading-relaxed text-charcoal/75">
               You control whether the message is sent. If you do not send the
@@ -116,7 +116,7 @@ export function PrivacyPage() {
                 href={business.phoneTel}
                 className="text-forest underline underline-offset-2"
               >
-                {business.phoneDisplay}
+                <span className="whitespace-nowrap">{business.phoneDisplay}</span>
               </a>{' '}
               or visit us at the address listed above.
             </p>

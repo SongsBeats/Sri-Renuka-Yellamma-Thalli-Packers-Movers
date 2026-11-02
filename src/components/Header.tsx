@@ -41,7 +41,7 @@ export function Header() {
       <div className="container-site flex h-[4.25rem] items-center justify-between gap-4 lg:h-[4.75rem]">
         <BrandMark />
 
-        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-4 xl:gap-7 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
@@ -60,18 +60,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button
-            href={business.phoneTel}
-            variant="accent"
-            size="sm"
-            className="hidden sm:inline-flex"
-          >
-            <Phone size={14} aria-hidden />
-            Call Now
-          </Button>
-          <Button to="/contact#quote" size="sm" className="hidden md:inline-flex">
-            Get a Quote
-          </Button>
+          <div className="hidden sm:block">
+            <Button href={business.phoneTel} variant="callGradient" size="sm">
+              <Phone size={14} aria-hidden />
+              Call Now
+            </Button>
+          </div>
+          <div className="hidden xl:block">
+            <Button to="/contact#quote" size="sm">
+              Get a Quote
+            </Button>
+          </div>
 
           <button
             type="button"

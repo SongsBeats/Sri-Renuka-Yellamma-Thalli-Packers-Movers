@@ -8,6 +8,7 @@ import { validateQuoteForm } from '../utils/validation';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { SectionLabel } from './SectionLabel';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 const initialData: QuoteFormData = {
   fullName: '',
@@ -254,7 +255,8 @@ export function QuoteForm({ embedded = false }: QuoteFormProps) {
       </p>
 
       <div className="mt-6">
-        <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto">
+        <Button type="submit" variant="whatsapp" size="lg" className="w-full sm:w-auto">
+          <WhatsAppIcon size={20} />
           Continue on WhatsApp
         </Button>
       </div>

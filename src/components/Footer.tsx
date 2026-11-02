@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { business, navLinks, serviceAreas, services } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 import { BusinessHours } from './BusinessHours';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -39,7 +40,7 @@ export function Footer() {
               <p>{business.address.full}</p>
               <a
                 href={business.phoneTel}
-                className="block transition-colors hover:text-ivory"
+                className="block whitespace-nowrap transition-colors hover:text-ivory"
               >
                 Call Now: {business.phoneDisplay}
               </a>
@@ -49,8 +50,9 @@ export function Footer() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block transition-colors hover:text-ivory"
+                className="inline-flex items-center gap-2 whitespace-nowrap transition-colors hover:text-ivory"
               >
+                <WhatsAppIcon size={18} className="text-whatsapp" />
                 WhatsApp Us
               </a>
               <a

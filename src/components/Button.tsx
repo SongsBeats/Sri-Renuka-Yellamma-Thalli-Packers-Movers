@@ -1,7 +1,14 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-type Variant = 'primary' | 'accent' | 'outline' | 'outlineLight' | 'ghost';
+type Variant =
+  | 'primary'
+  | 'accent'
+  | 'outline'
+  | 'outlineLight'
+  | 'ghost'
+  | 'whatsapp'
+  | 'callGradient';
 
 type CommonProps = {
   children: ReactNode;
@@ -43,6 +50,9 @@ const variantClasses: Record<Variant, string> = {
     'border border-ivory/40 bg-transparent text-ivory hover:border-ivory hover:bg-ivory/10 focus-visible:ring-ivory',
   ghost:
     'bg-transparent text-charcoal hover:text-forest focus-visible:ring-forest',
+  whatsapp:
+    'bg-whatsapp text-white hover:bg-whatsapp-deep focus-visible:ring-whatsapp',
+  callGradient: 'btn-call-gradient focus-visible:ring-terracotta',
 };
 
 const sizeClasses = {
@@ -58,7 +68,7 @@ export function Button(props: ButtonProps) {
   const { children } = props;
 
   const classes = [
-    'inline-flex items-center justify-center gap-2 font-medium uppercase transition-colors duration-200',
+    'inline-flex items-center justify-center gap-2 font-medium whitespace-nowrap uppercase transition-colors duration-200',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ivory',
     'disabled:pointer-events-none disabled:opacity-50',
     'rounded-sm',

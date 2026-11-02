@@ -2,6 +2,7 @@ import { serviceAreas } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { SectionLabel } from './SectionLabel';
 
 type ServiceAreasSectionProps = {
@@ -37,8 +38,9 @@ export function ServiceAreasSection({
               )}
               target="_blank"
               rel="noopener noreferrer"
-              variant="accent"
+              variant="whatsapp"
             >
+              <WhatsAppIcon size={18} />
               Check Service Availability
             </Button>
           </Reveal>

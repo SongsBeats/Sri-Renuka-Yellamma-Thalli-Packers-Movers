@@ -3,6 +3,7 @@ import { Button } from '../components/Button';
 import { Reveal } from '../components/Reveal';
 import { SectionLabel } from '../components/SectionLabel';
 import { Seo } from '../components/Seo';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { business, serviceAreas } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 
@@ -77,8 +78,9 @@ export function ServiceAreasPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="accent"
+                variant="whatsapp"
               >
+                <WhatsAppIcon size={18} />
                 Check on WhatsApp
               </Button>
               <Button href={business.phoneTel} variant="outline">

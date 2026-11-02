@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, Navigation, Phone } from 'lucide-react';
+import { MapPin, Navigation, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { business } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
@@ -6,6 +6,7 @@ import { BusinessHours } from './BusinessHours';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { SectionLabel } from './SectionLabel';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export function ContactSection() {
   return (
@@ -44,7 +45,7 @@ export function ContactSection() {
               <dd className="mt-1.5">
                 <a
                   href={business.phoneTel}
-                  className="inline-flex items-center gap-2 text-base text-forest transition-colors hover:text-terracotta"
+                  className="inline-flex items-center gap-2 text-base whitespace-nowrap text-forest transition-colors hover:text-terracotta"
                 >
                   <Phone size={16} aria-hidden />
                   {business.phoneDisplay}
@@ -66,9 +67,9 @@ export function ContactSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              variant="accent"
+              variant="whatsapp"
             >
-              <MessageCircle size={16} aria-hidden />
+              <WhatsAppIcon size={18} />
               WhatsApp Us
             </Button>
             <Button

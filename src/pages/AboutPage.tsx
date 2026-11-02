@@ -3,6 +3,7 @@ import { Button } from '../components/Button';
 import { Reveal } from '../components/Reveal';
 import { SectionLabel } from '../components/SectionLabel';
 import { Seo } from '../components/Seo';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 import { business } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 
@@ -116,8 +117,9 @@ export function AboutPage() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              variant="outlineLight"
+              variant="whatsapp"
             >
+              <WhatsAppIcon size={18} />
               WhatsApp Us
             </Button>
             <Button to="/contact#quote" variant="outlineLight">
