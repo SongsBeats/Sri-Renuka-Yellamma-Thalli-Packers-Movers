@@ -1,6 +1,8 @@
 import { MapPin, MessageCircle, Navigation, Phone } from 'lucide-react';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { Button } from '../components/Button';
+import { BusinessHours } from '../components/BusinessHours';
+import { MapEmbed } from '../components/MapEmbed';
 import { QuoteForm } from '../components/QuoteForm';
 import { Reveal } from '../components/Reveal';
 import { SectionLabel } from '../components/SectionLabel';
@@ -12,7 +14,7 @@ export function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact Us | Packers and Movers in Karmanghat, Hyderabad"
+        title="Contact Us | Sri Renuka Yellamma Thalli Packers & Movers, Karmanghat, Hyderabad"
         description="Contact Sri Renuka Yellamma Thalli Packers & Movers in Karmanghat, Hyderabad. Call +91 77994 51430 or request a quote on WhatsApp."
         path="/contact"
         jsonLd={localBusinessJsonLd()}
@@ -78,7 +80,7 @@ export function ContactPage() {
               <div className="mt-8 flex flex-col gap-3">
                 <Button href={business.phoneTel}>
                   <Phone size={16} aria-hidden />
-                  Call Us
+                  Call Now
                 </Button>
                 <Button
                   href={buildWhatsAppUrl(
@@ -102,14 +104,17 @@ export function ContactPage() {
                 </Button>
               </div>
 
+              <BusinessHours className="mt-8" />
+
               <p className="mt-6 text-xs leading-relaxed text-charcoal/55">
-                Business hours are available on request. Please call or message
-                to confirm availability for your preferred moving date.
+                Please call or message to confirm availability for your
+                preferred moving date.
               </p>
             </div>
           </Reveal>
 
           <Reveal className="lg:col-span-7" delay={80}>
+            <MapEmbed className="mb-6" />
             <div className="overflow-hidden rounded-sm">
               <img
                 src="/images/hero-moving.jpg"

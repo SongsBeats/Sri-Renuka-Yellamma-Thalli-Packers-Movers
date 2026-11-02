@@ -13,8 +13,8 @@ export function HomePage() {
   return (
     <>
       <Seo
-        title="Packers and Movers in Hyderabad | Sri Renuka Yellamma Thalli"
-        description="Home and office packing and moving services in Hyderabad. Based in Karmanghat. Request a quote by phone or WhatsApp."
+        title="Sri Renuka Yellamma Thalli Packers & Movers | Packers and Movers in Karmanghat, Hyderabad"
+        description="Sri Renuka Yellamma Thalli Packers & Movers - home and office packing and moving services in Hyderabad, based in Karmanghat. Call +91 77994 51430 or WhatsApp for a quote."
         path="/"
         jsonLd={localBusinessJsonLd()}
       />

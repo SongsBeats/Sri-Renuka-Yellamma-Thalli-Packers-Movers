@@ -12,7 +12,7 @@ export function ServicesPage() {
   return (
     <>
       <Seo
-        title="Packing and Moving Services in Hyderabad | Home & Office Relocation"
+        title="Packing and Moving Services in Hyderabad | Sri Renuka Yellamma Thalli Packers & Movers"
         description="Home shifting, office relocation, packing, loading, and local moving services from Sri Renuka Yellamma Thalli Packers & Movers in Karmanghat, Hyderabad."
         path="/services"
       />

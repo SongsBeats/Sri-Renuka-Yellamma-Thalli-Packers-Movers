@@ -10,7 +10,7 @@ export function ServiceAreasPage() {
   return (
     <>
       <Seo
-        title="Service Areas | Packers and Movers in Karmanghat & Hyderabad"
+        title="Service Areas | Sri Renuka Yellamma Thalli Packers & Movers, Hyderabad"
         description="Packers and movers serving Karmanghat, LB Nagar, Dilsukhnagar, Vanasthalipuram, and surrounding areas of Hyderabad. Check service availability."
         path="/service-areas"
       />
@@ -82,7 +82,7 @@ export function ServiceAreasPage() {
                 Check on WhatsApp
               </Button>
               <Button href={business.phoneTel} variant="outline">
-                Call Us
+                Call Now
               </Button>
             </div>
           </div>

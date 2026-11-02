@@ -1,7 +1,7 @@
 export const business = {
   name: 'Sri Renuka Yellamma Thalli Packers & Movers',
   shortName: 'Sri Renuka Yellamma Thalli',
-  tagline: 'PACKERS & MOVERS',
+  tagline: 'Packers & Movers',
   phoneDisplay: '+91 77994 51430',
   phoneTel: 'tel:+917799451430',
   phoneRaw: '917799451430',
@@ -20,6 +20,10 @@ export const business = {
   country: 'IN',
   description:
     'Packing and moving services for home and office relocation in Hyderabad, based in Karmanghat.',
+  // Embeddable Google Map (no API key needed). Replace with the Google Business
+  // Profile / Maps share link once the listing is live, if preferred.
+  mapEmbedUrl:
+    'https://www.google.com/maps?q=Plot+No.+8-8-491,+Tapovan+Colony,+Karmanghat,+Hyderabad,+Telangana+500079&output=embed',
   directionsUrl:
     'https://www.google.com/maps/search/?api=1&query=Plot+No.+8-8-491,+Tapovan+Colony,+Karmanghat,+Hyderabad,+Telangana+500079',
 } as const;
@@ -172,3 +176,48 @@ export const trustItems = [
   'Local Transportation',
   'Enquiry Support',
 ] as const;
+
+// ---------------------------------------------------------------------------
+// PLACEHOLDERS - NOT YET CONFIRMED BY THE BUSINESS OWNER.
+// Update these values, then set the matching *Confirmed flag to true.
+// Everything on the site (footer, contact page, JSON-LD schema) reads from here.
+// ---------------------------------------------------------------------------
+
+/** TODO(owner): confirm real opening hours - these are PLACEHOLDERS. */
+export const businessHours = {
+  confirmed: false,
+  /** Human readable rows shown on the site. */
+  rows: [
+    { days: 'Monday - Saturday', hours: '9:00 AM - 7:00 PM' },
+    { days: 'Sunday', hours: 'Closed' },
+  ],
+  /** Machine readable rows used for schema.org openingHoursSpecification. */
+  schema: [
+    {
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '19:00',
+    },
+  ],
+} as const;
+
+/**
+ * TODO(owner): approximate centre of Karmanghat locality (public data), NOT the
+ * exact plot. Replace with the exact latitude/longitude of the shop from Google Maps.
+ */
+export const geo = {
+  confirmed: false,
+  latitude: 17.34111,
+  longitude: 78.53167,
+} as const;
+
+/**
+ * TODO(owner): live website URL (e.g. 'https://www.yourdomain.in'). Used for the
+ * static JSON-LD in index.html. Leave empty until a domain is connected; the
+ * runtime schema falls back to the current origin.
+ */
+export const siteUrl = '';
+
+/** Pre-filled WhatsApp opening message used by the floating button and Call/WhatsApp buttons. */
+export const whatsappDefaultMessage =
+  'Hello, I would like to enquire about packing and moving services with Sri Renuka Yellamma Thalli Packers & Movers.';

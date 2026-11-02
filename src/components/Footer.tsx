@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { business, navLinks, serviceAreas, services } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
+import { BusinessHours } from './BusinessHours';
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-forest text-ivory">
-      <div className="container-site py-16 lg:py-20">
+      <div className="container-site pt-16 pb-32 lg:pt-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
             <div className="flex items-start gap-3">
@@ -33,12 +34,14 @@ export function Footer() {
               Practical packing and relocation support for homes and offices in
               Hyderabad, based in Karmanghat.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-ivory/80">
+            <address className="mt-6 space-y-2 text-sm not-italic text-ivory/80">
+              <p className="font-medium text-ivory">{business.name}</p>
+              <p>{business.address.full}</p>
               <a
                 href={business.phoneTel}
                 className="block transition-colors hover:text-ivory"
               >
-                {business.phoneDisplay}
+                Call Now: {business.phoneDisplay}
               </a>
               <a
                 href={buildWhatsAppUrl(
@@ -50,7 +53,16 @@ export function Footer() {
               >
                 WhatsApp Us
               </a>
-            </div>
+              <a
+                href={business.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition-colors hover:text-ivory"
+              >
+                Get Directions
+              </a>
+            </address>
+            <BusinessHours tone="dark" className="mt-5" />
           </div>
 
           <div className="lg:col-span-2">
@@ -113,9 +125,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm leading-relaxed text-ivory/70">
-              {business.address.full}
-            </p>
           </div>
         </div>
 

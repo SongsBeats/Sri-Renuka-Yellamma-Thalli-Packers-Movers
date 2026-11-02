@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { business } from '../data/business';
+import { business, businessHours, geo, serviceAreas, services } from '../data/business';
 
 export type SeoProps = {
   title: string;
@@ -40,7 +40,7 @@ export function Seo({
   type = 'website',
   jsonLd,
 }: SeoProps) {
-  const jsonLdSerialized = jsonLd ? JSON.stringify(jsonLd) : '';
+  const jsonLdSerialized = JSON.stringify(jsonLd ?? localBusinessJsonLd());
 
   useEffect(() => {
     const origin = window.location.origin;
@@ -87,24 +87,40 @@ export function Seo({
 }
 
 export function localBusinessJsonLd() {
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
   return {
     '@context': 'https://schema.org',
     '@type': 'MovingCompany',
     name: business.name,
     description: business.description,
+    url: origin,
     telephone: '+917799451430',
+    image: `${origin}/images/hero-moving.jpg`,
+    logo: `${origin}/logo.png`,
+    hasMap: business.directionsUrl,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Plot No. 8-8-491, Tapovan Colony',
-      addressLocality: 'Karmanghat, Hyderabad',
-      addressRegion: 'Telangana',
-      postalCode: '500079',
-      addressCountry: 'IN',
+      streetAddress: business.address.line1,
+      addressLocality: business.city,
+      addressRegion: business.state,
+      postalCode: business.postalCode,
+      addressCountry: business.country,
     },
-    areaServed: [
-      { '@type': 'City', name: 'Hyderabad' },
-      { '@type': 'Place', name: 'Karmanghat' },
-    ],
-    image: '/images/hero-moving.jpg',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: geo.latitude,
+      longitude: geo.longitude,
+    },
+    openingHoursSpecification: businessHours.schema.map((h) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [...h.dayOfWeek],
+      opens: h.opens,
+      closes: h.closes,
+    })),
+    areaServed: serviceAreas.map((name) => ({ '@type': 'Place', name })),
+    makesOffer: services.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: service.title },
+    })),
   };
 }

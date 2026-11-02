@@ -1,7 +1,8 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { navLinks } from '../data/business';
+import { Phone } from 'lucide-react';
+import { business, navLinks } from '../data/business';
 import { BrandMark } from './BrandMark';
 import { Button } from './Button';
 import { MobileNavigation } from './MobileNavigation';
@@ -59,7 +60,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button to="/contact#quote" size="sm" className="hidden sm:inline-flex">
+          <Button
+            href={business.phoneTel}
+            variant="accent"
+            size="sm"
+            className="hidden sm:inline-flex"
+          >
+            <Phone size={14} aria-hidden />
+            Call Now
+          </Button>
+          <Button to="/contact#quote" size="sm" className="hidden md:inline-flex">
             Get a Quote
           </Button>
 

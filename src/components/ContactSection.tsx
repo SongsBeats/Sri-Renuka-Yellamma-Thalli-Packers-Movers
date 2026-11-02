@@ -2,6 +2,7 @@ import { MapPin, MessageCircle, Navigation, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { business } from '../data/business';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
+import { BusinessHours } from './BusinessHours';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { SectionLabel } from './SectionLabel';
@@ -52,10 +53,12 @@ export function ContactSection() {
             </div>
           </dl>
 
+          <BusinessHours className="mt-6" />
+
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={business.phoneTel}>
               <Phone size={16} aria-hidden />
-              Call Us
+              Call Now
             </Button>
             <Button
               href={buildWhatsAppUrl(
