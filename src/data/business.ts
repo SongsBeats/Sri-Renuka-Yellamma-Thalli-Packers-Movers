@@ -179,25 +179,27 @@ export const trustItems = [
 ] as const;
 
 // ---------------------------------------------------------------------------
-// PLACEHOLDERS - NOT YET CONFIRMED BY THE BUSINESS OWNER.
-// Update these values, then set the matching *Confirmed flag to true.
+// Business hours (confirmed by the owner): open all 7 days, 6:00 AM - 10:00 PM.
 // Everything on the site (footer, contact page, JSON-LD schema) reads from here.
 // ---------------------------------------------------------------------------
 
-/** TODO(owner): confirm real opening hours - these are PLACEHOLDERS. */
 export const businessHours = {
-  confirmed: false,
   /** Human readable rows shown on the site. */
-  rows: [
-    { days: 'Monday - Saturday', hours: '9:00 AM - 7:00 PM' },
-    { days: 'Sunday', hours: 'Closed' },
-  ],
+  rows: [{ days: 'Monday - Sunday', hours: '6:00 AM - 10:00 PM' }],
   /** Machine readable rows used for schema.org openingHoursSpecification. */
   schema: [
     {
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00',
-      closes: '19:00',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+      opens: '06:00',
+      closes: '22:00',
     },
   ],
 } as const;
@@ -212,12 +214,9 @@ export const geo = {
   longitude: 78.53167,
 } as const;
 
-/**
- * TODO(owner): live website URL (e.g. 'https://www.yourdomain.in'). Used for the
- * static JSON-LD in index.html. Leave empty until a domain is connected; the
- * runtime schema falls back to the current origin.
- */
-export const siteUrl = '';
+/** Live website URL (no trailing slash). Used for canonical, og:url, schema and sitemap. */
+export const siteUrl =
+  'https://sri-renuka-yellamma-thalli-packers.vercel.app';
 
 /** Pre-filled WhatsApp opening message used by the floating button and Call/WhatsApp buttons. */
 export const whatsappDefaultMessage =

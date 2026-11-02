@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { business, businessHours, geo, serviceAreas, services } from '../data/business';
+import { business, businessHours, geo, serviceAreas, services, siteUrl } from '../data/business';
 
 export type SeoProps = {
   title: string;
@@ -43,7 +43,7 @@ export function Seo({
   const jsonLdSerialized = JSON.stringify(jsonLd ?? localBusinessJsonLd());
 
   useEffect(() => {
-    const origin = window.location.origin;
+    const origin = siteUrl;
     const url = `${origin}${path}`;
     const absoluteImage = image.startsWith('http')
       ? image
@@ -87,7 +87,7 @@ export function Seo({
 }
 
 export function localBusinessJsonLd() {
-  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const origin = siteUrl;
   return {
     '@context': 'https://schema.org',
     '@type': 'MovingCompany',

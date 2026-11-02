@@ -26,7 +26,9 @@ function businessJsonLd(): Plugin {
         '@type': 'MovingCompany',
         name: business.name,
         description: business.description,
-        ...(siteUrl ? { url: siteUrl, image: `${siteUrl}/images/hero-moving.jpg`, logo: `${siteUrl}/logo.png` } : {}),
+        url: siteUrl,
+        image: `${siteUrl}/images/hero-moving.jpg`,
+        logo: `${siteUrl}/logo.png`,
         telephone: '+917799451430',
         hasMap: business.directionsUrl,
         address: {
@@ -57,7 +59,14 @@ function businessJsonLd(): Plugin {
       const json = JSON.stringify(data).replace(/</g, '\\u003c')
       return html.replace(
         '<!--BUSINESS_JSONLD-->',
-        `<script type="application/ld+json" id="page-jsonld">${json}</script>`,
+        [
+          `<link rel="canonical" href="${siteUrl}/" />`,
+          `<meta property="og:type" content="website" />`,
+          `<meta property="og:site_name" content="${business.name.replace(/&/g, '&amp;')}" />`,
+          `<meta property="og:url" content="${siteUrl}/" />`,
+          `<meta property="og:image" content="${siteUrl}/images/hero-moving.jpg" />`,
+          `<script type="application/ld+json" id="page-jsonld">${json}</script>`,
+        ].join('\n    '),
       )
     },
   }
